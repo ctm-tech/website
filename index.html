@@ -5,19 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CTM Tech — IT Support &amp; Smart Home Technology in Hertfordshire</title>
 <meta name="description" content="CTM Tech delivers managed IT, cloud, Microsoft 365 and endpoint security for Hertfordshire businesses — plus smart home networking and automation. 18 years of corporate infrastructure experience.">
+<link rel="canonical" href="https://ctm-tech.co.uk/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="CTM Tech — IT Support &amp; Smart Home Technology in Hertfordshire">
+<meta property="og:description" content="Corporate-grade IT for Hertfordshire businesses. Networking, cloud, Microsoft 365 and endpoint protection — plus smart home networking and automation.">
+<meta property="og:url" content="https://ctm-tech.co.uk/">
+<meta name="twitter:card" content="summary_large_image">
 
 <!--
   =====================================================================
-  BEFORE PUBLISHING — search for "[[" to find every placeholder.
+  CTM TECH — SETUP CHECKLIST
+  Search for "[[" to find every placeholder that needs your input.
 
-  1. [[YEAR]]  — year CTM Tech was founded. Appears in: hero sub-line,
-                 credentials strip, About paragraph, footer.
-  2. Case studies — three placeholder cards in #work. Structure mirrors
-                 what local MSPs run: problem → what you did → measurable result.
-  3. Cyber Essentials — a badge row in #about is commented out.
-                 Uncomment ONLY once actually certified.
-  4. Towns list — currently the Herts commuter belt. Trim to your real radius.
-  5. Form backend — see "TODO: FORM SUBMIT" near the bottom.
+  CONTENT
+
+  2. Case studies    — three cards in #work. Problem → approach → measurable result.
+  3. Cyber Essentials — badge in #about is commented out. Uncomment ONLY once certified.
+  4. Towns list      — trim #contact to your real travel radius.
+
+  CONTACT FORM (see README.md for the full walkthrough)
+  6. Turnstile       — the widget below is commented out. Uncomment and paste your
+                       site key once you've created a Turnstile widget in Cloudflare.
+                       The form works fine without it; you'll just get more spam.
   =====================================================================
 -->
 
@@ -30,6 +40,7 @@
     --ink:#0A0D12; --panel:#11161E; --panel-2:#161D27;
     --line:rgba(226,232,240,0.08); --line-2:rgba(226,232,240,0.15);
     --text:#E2E8F0; --dim:#8593A5; --amber:#F5A524; --steel:#7DA2CE;
+    --red:#E5646E;
     --r:2px; --maxw:1200px;
   }
   *{box-sizing:border-box}
@@ -40,6 +51,7 @@
   a{color:inherit}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
   :focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+  .visually-hidden{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
 
   .eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;display:flex;align-items:center;gap:10px}
   .eyebrow::after{content:"";height:1px;flex:1;background:var(--line-2);max-width:60px}
@@ -47,6 +59,7 @@
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:0.88rem;font-weight:600;padding:12px 22px;border-radius:var(--r);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .15s,border-color .15s,color .15s,transform .15s;font-family:'Inter',sans-serif}
   .btn-primary{background:var(--amber);color:#241502}
   .btn-primary:hover{background:#ffbb42;transform:translateY(-1px)}
+  .btn-primary[disabled]{opacity:0.55;cursor:progress;transform:none}
   .btn-ghost{border-color:var(--line-2);color:var(--text)}
   .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
 
@@ -95,6 +108,7 @@
   .section-head h2{font-size:clamp(1.75rem,3.1vw,2.4rem);font-weight:700}
   .section-head p{color:var(--dim);margin-top:16px}
   .sec-h2{font-size:clamp(1.75rem,3.1vw,2.4rem);font-weight:700}
+  .band-p{color:var(--dim);margin-top:16px}
 
   .biz-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
   @media(max-width:980px){.biz-grid{grid-template-columns:repeat(2,1fr)}}
@@ -118,7 +132,6 @@
   .home-item p{font-size:0.82rem;color:var(--dim);margin:0}
   .indep{margin-top:26px;padding:18px 20px;background:var(--panel-2);border-left:2px solid var(--steel);font-size:0.9rem;color:var(--dim)}
   .indep strong{color:var(--text);font-weight:600}
-  .band-p{color:var(--dim);margin-top:16px}
 
   .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   @media(max-width:900px){.work-grid{grid-template-columns:1fr}}
@@ -157,8 +170,10 @@
   textarea{resize:vertical;min-height:104px}
   .form-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:4px}
   .form-note{font-size:0.75rem;color:var(--dim)}
+  .cf-turnstile{margin-bottom:18px}
   .confirm{display:none;margin-top:18px;padding:14px 16px;border-left:2px solid var(--amber);background:rgba(245,165,36,0.07);font-size:0.86rem}
   .confirm.show{display:block}
+  .confirm.error{border-left-color:var(--red);background:rgba(229,100,110,0.08)}
 
   footer{padding:44px 0}
   .foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
@@ -192,7 +207,7 @@
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a href="#contact" class="btn btn-primary">Book a free IT review</a>
+      <a href="#contact" class="btn btn-primary">Get in touch</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </button>
@@ -214,10 +229,10 @@
         We apply the same discipline to smart homes.
       </p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn btn-primary">Book a free IT review</a>
+        <a href="#contact" class="btn btn-primary">Get in touch</a>
         <a href="#business" class="btn btn-ghost">What we do</a>
       </div>
-      <p class="hero-sub">CISCO CERTIFIED &nbsp;/&nbsp; COMPTIA SECURITY+ &nbsp;/&nbsp; ESTABLISHED [[YEAR]]</p>
+      <p class="hero-sub">CISCO CERTIFIED &nbsp;/&nbsp; COMPTIA SECURITY+ &nbsp;/&nbsp; ESTABLISHED 2016</p>
     </div>
 
     <div class="hero-visual" aria-hidden="true">
@@ -264,7 +279,7 @@
   <div class="cred">
     <div class="cred-inner">
       <div class="cred-item"><b>18 yrs</b><span>Corporate IT experience</span></div>
-      <div class="cred-item"><b>Since [[YEAR]]</b><span>Trading in Hertfordshire</span></div>
+      <div class="cred-item"><b>Since 2016</b><span>Trading in Hertfordshire</span></div>
       <div class="cred-item"><b>Cisco</b><span>Certified networking</span></div>
       <div class="cred-item"><b>Security+</b><span>CompTIA certified</span></div>
     </div>
@@ -413,7 +428,7 @@
       <div class="eyebrow">About CTM Tech</div>
       <h2 class="sec-h2" style="margin-bottom:22px">Eighteen years of enterprise habits</h2>
       <p>
-        CTM Tech has served Hertfordshire since <strong>[[YEAR]]</strong>. Behind it sits
+        CTM Tech has served Hertfordshire since <strong>2016</strong>. Behind it sits
         <strong>18 years inside corporate IT environments</strong> &mdash; the kind where
         downtime is counted in pounds per minute and a badly segmented network becomes a
         board-level problem.
@@ -481,18 +496,18 @@
         <b>Areas served</b>
         St Albans &middot; Watford &middot; Hemel Hempstead &middot; Stevenage &middot; Hertford &middot;
         Hatfield &middot; Welwyn Garden City &middot; Harpenden &middot; Berkhamsted &middot;
-        Bishop's Stortford &middot; Potters Bar &middot; Borehamwood &middot; and surrounding areas
+        Bishop's Stortford &middot; Potters Bar &middot; Tring &middot; and surrounding areas
       </div>
     </div>
 
-    <form id="contact-form" class="reveal" novalidate>
+    <form id="contact-form" class="reveal" method="POST" action="/api/contact" novalidate>
       <div class="row">
-        <div class="field"><label for="f-name">Name</label><input type="text" id="f-name" name="name" required></div>
-        <div class="field"><label for="f-company">Company (optional)</label><input type="text" id="f-company" name="company"></div>
+        <div class="field"><label for="f-name">Name</label><input type="text" id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-company">Company (optional)</label><input type="text" id="f-company" name="company" autocomplete="organization"></div>
       </div>
       <div class="row">
-        <div class="field"><label for="f-email">Email</label><input type="email" id="f-email" name="email" required></div>
-        <div class="field"><label for="f-phone">Phone (optional)</label><input type="tel" id="f-phone" name="phone"></div>
+        <div class="field"><label for="f-email">Email</label><input type="email" id="f-email" name="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-phone">Phone (optional)</label><input type="tel" id="f-phone" name="phone" autocomplete="tel"></div>
       </div>
       <div class="row">
         <div class="field">
@@ -522,14 +537,23 @@
         <label for="f-message">What's the situation?</label>
         <textarea id="f-message" name="message" required placeholder="What's working, what isn't, and what you'd like to change."></textarea>
       </div>
+
+      <!-- Honeypot. Bots fill this in; people never see it. Not display:none — some bots skip those. -->
+      <div class="visually-hidden" aria-hidden="true">
+        <label for="f-website">Website</label>
+        <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <!-- TURNSTILE: uncomment both lines below once you've created a widget and have a site key.
+           Also add the script tag: <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer><\/script>
+      <div class="cf-turnstile" data-sitekey="[[TURNSTILE_SITE_KEY]]" data-theme="dark"></div>
+      -->
+
       <div class="form-foot">
         <span class="form-note">We'll only use these details to reply to your enquiry.</span>
         <button type="submit" class="btn btn-primary">Send enquiry</button>
       </div>
-      <div class="confirm" id="confirmMsg">
-        Enquiry ready to send. This form isn't connected to an inbox yet &mdash; see the setup
-        note in the page source to wire it up.
-      </div>
+      <div class="confirm" id="confirmMsg" role="status" aria-live="polite"></div>
     </form>
   </div>
 </section>
@@ -546,36 +570,86 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-    <span class="meta">&copy; 2026 CTM Tech &middot; Hertfordshire &middot; Est. [[YEAR]]</span>
+    <span class="meta">&copy; 2026 CTM Tech &middot; Hertfordshire &middot; Est. 2016</span>
   </div>
 </footer>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "CTM Tech",
+  "description": "IT consultancy for Hertfordshire SMBs — networking, cloud, Microsoft 365 and endpoint protection — plus home networking and smart home automation.",
+  "url": "https://ctm-tech.co.uk/",
+  "areaServed": [
+    {"@type":"AdministrativeArea","name":"Hertfordshire"},
+    {"@type":"City","name":"St Albans"},
+    {"@type":"City","name":"Watford"},
+    {"@type":"City","name":"Hemel Hempstead"},
+    {"@type":"City","name":"Stevenage"},
+    {"@type":"City","name":"Hertford"}
+  ],
+  "knowsAbout": ["Office networking","Cloud services","Microsoft 365","Endpoint protection","Home networking","Home automation"],
+  "priceRange": "££"
+}
+</script>
+
 <script>
+  // Mobile nav
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
   menuToggle.addEventListener('click', () => {
     const open = navLinks.classList.toggle('open');
-    menuToggle.setAttribute('aria-expanded', open);
+    menuToggle.setAttribute('aria-expanded', String(open));
   });
   navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     navLinks.classList.remove('open');
     menuToggle.setAttribute('aria-expanded','false');
   }));
 
+  // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
+  // Contact form → /api/contact (Cloudflare Pages Function)
   const form = document.getElementById('contact-form');
   const confirmMsg = document.getElementById('confirmMsg');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    if(!form.checkValidity()){ form.reportValidity(); return; }
-    // TODO: FORM SUBMIT — replace with a real endpoint, e.g.
-    // fetch('https://formspree.io/f/YOUR_ID', {method:'POST', body:new FormData(form), headers:{Accept:'application/json'}})
+  const submitBtn = form.querySelector('button[type=submit]');
+
+  function say(text, isError) {
+    confirmMsg.textContent = text;
+    confirmMsg.classList.toggle('error', !!isError);
     confirmMsg.classList.add('show');
-    form.reset();
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    confirmMsg.classList.remove('show');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      const out = await res.json().catch(() => ({ ok: false, message: 'Unexpected response from the server.' }));
+      say(out.message, !out.ok);
+      if (out.ok) {
+        form.reset();
+        if (window.turnstile) window.turnstile.reset();
+      }
+    } catch {
+      say('Could not reach the server. Please check your connection and try again.', true);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send enquiry';
+    }
   });
 </script>
 </body>
