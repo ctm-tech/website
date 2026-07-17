@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CTM Tech — IT Support &amp; Smart Home Technology in Hertfordshire</title>
+<meta name="description" content="CTM Tech delivers managed IT, cloud, Microsoft 365 and endpoint security for Hertfordshire businesses — plus smart home networking and automation. 18 years of corporate infrastructure experience.">
+
+<!--
+  =====================================================================
+  BEFORE PUBLISHING — search for "[[" to find every placeholder.
+
+  1. [[YEAR]]  — year CTM Tech was founded. Appears in: hero sub-line,
+                 credentials strip, About paragraph, footer.
+  2. Case studies — three placeholder cards in #work. Structure mirrors
+                 what local MSPs run: problem → what you did → measurable result.
+  3. Cyber Essentials — a badge row in #about is commented out.
+                 Uncomment ONLY once actually certified.
+  4. Towns list — currently the Herts commuter belt. Trim to your real radius.
+  5. Form backend — see "TODO: FORM SUBMIT" near the bottom.
+  =====================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;600;700;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0A0D12; --panel:#11161E; --panel-2:#161D27;
+    --line:rgba(226,232,240,0.08); --line-2:rgba(226,232,240,0.15);
+    --text:#E2E8F0; --dim:#8593A5; --amber:#F5A524; --steel:#7DA2CE;
+    --r:2px; --maxw:1200px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+  body{margin:0;background:var(--ink);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Chivo',sans-serif;margin:0;line-height:1.12;letter-spacing:-0.02em}
+  a{color:inherit}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--amber);margin-bottom:16px;display:flex;align-items:center;gap:10px}
+  .eyebrow::after{content:"";height:1px;flex:1;background:var(--line-2);max-width:60px}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:0.88rem;font-weight:600;padding:12px 22px;border-radius:var(--r);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .15s,border-color .15s,color .15s,transform .15s;font-family:'Inter',sans-serif}
+  .btn-primary{background:var(--amber);color:#241502}
+  .btn-primary:hover{background:#ffbb42;transform:translateY(-1px)}
+  .btn-ghost{border-color:var(--line-2);color:var(--text)}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber)}
+
+  header.site-nav{position:sticky;top:0;z-index:60;background:rgba(10,13,18,0.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+  .logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+  .logo-mark{width:26px;height:26px;flex-shrink:0}
+  .logo-text{font-family:'Chivo',sans-serif;font-weight:900;font-size:1.15rem;letter-spacing:-0.02em}
+  .logo-text i{font-style:normal;color:var(--amber)}
+  nav.links{display:flex;gap:30px}
+  nav.links a{text-decoration:none;font-size:0.9rem;color:var(--dim);transition:color .15s}
+  nav.links a:hover{color:var(--text)}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .menu-toggle{display:none;background:none;border:none;color:var(--text);cursor:pointer;padding:6px}
+  @media(max-width:900px){
+    nav.links{position:absolute;top:100%;left:0;right:0;background:var(--panel);border-bottom:1px solid var(--line);flex-direction:column;gap:0;max-height:0;overflow:hidden;transition:max-height .25s}
+    nav.links.open{max-height:340px}
+    nav.links a{padding:15px 28px;border-bottom:1px solid var(--line)}
+    .nav-cta .btn{font-size:0.8rem;padding:10px 14px}
+    .menu-toggle{display:block}
+  }
+  @media(max-width:520px){ .nav-cta .btn{display:none} }
+
+  .hero{padding:88px 0 0;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 340px at 78% 30%, rgba(125,162,206,0.10), transparent 70%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;position:relative;z-index:2}
+  @media(max-width:960px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+  .hero h1{font-size:clamp(2.15rem,4.4vw,3.45rem);font-weight:700;max-width:16ch}
+  .hero h1 em{font-style:normal;color:var(--amber)}
+  .hero .lede{margin-top:24px;max-width:52ch;color:var(--dim);font-size:1.05rem}
+  .hero-ctas{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .hero-sub{margin-top:22px;font-family:'JetBrains Mono',monospace;font-size:0.74rem;color:var(--dim);letter-spacing:0.04em}
+  .hero-visual svg{width:100%;height:auto;display:block}
+
+  .cred{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--panel);margin-top:80px}
+  .cred-inner{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(4,1fr)}
+  @media(max-width:800px){.cred-inner{grid-template-columns:repeat(2,1fr)}}
+  .cred-item{padding:26px 24px;border-left:1px solid var(--line)}
+  .cred-item:first-child{border-left:none}
+  @media(max-width:800px){ .cred-item:nth-child(3){border-left:none} .cred-item:nth-child(n+3){border-top:1px solid var(--line)} }
+  .cred-item b{display:block;font-family:'Chivo',sans-serif;font-weight:700;font-size:1.55rem;letter-spacing:-0.02em}
+  .cred-item span{font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--dim);margin-top:6px;display:block}
+
+  section{padding:100px 0;border-bottom:1px solid var(--line)}
+  .section-head{max-width:660px;margin-bottom:52px}
+  .section-head h2{font-size:clamp(1.75rem,3.1vw,2.4rem);font-weight:700}
+  .section-head p{color:var(--dim);margin-top:16px}
+  .sec-h2{font-size:clamp(1.75rem,3.1vw,2.4rem);font-weight:700}
+
+  .biz-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  @media(max-width:980px){.biz-grid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:600px){.biz-grid{grid-template-columns:1fr}}
+  .svc{background:var(--ink);padding:32px 26px;transition:background .2s}
+  .svc:hover{background:var(--panel)}
+  .svc-icon{width:26px;height:26px;color:var(--amber);margin-bottom:18px}
+  .svc h3{font-size:1.06rem;font-weight:600;margin-bottom:10px}
+  .svc p{color:var(--dim);font-size:0.88rem;margin:0 0 16px}
+  .svc ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px}
+  .svc ul li{font-size:0.82rem;color:var(--text);padding-left:14px;position:relative}
+  .svc ul li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;background:var(--line-2)}
+
+  .home-band{background:var(--panel)}
+  .home-grid{display:grid;grid-template-columns:0.95fr 1.05fr;gap:56px;align-items:center}
+  @media(max-width:900px){.home-grid{grid-template-columns:1fr;gap:36px}}
+  .home-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  @media(max-width:560px){.home-list{grid-template-columns:1fr}}
+  .home-item{background:var(--panel);padding:22px 20px}
+  .home-item h4{font-size:0.95rem;font-weight:600;margin-bottom:7px}
+  .home-item p{font-size:0.82rem;color:var(--dim);margin:0}
+  .indep{margin-top:26px;padding:18px 20px;background:var(--panel-2);border-left:2px solid var(--steel);font-size:0.9rem;color:var(--dim)}
+  .indep strong{color:var(--text);font-weight:600}
+  .band-p{color:var(--dim);margin-top:16px}
+
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media(max-width:900px){.work-grid{grid-template-columns:1fr}}
+  .case{background:var(--panel);border:1px solid var(--line);padding:26px;display:flex;flex-direction:column;gap:13px;min-height:250px}
+  .case-top{display:flex;justify-content:space-between;align-items:center;font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--dim);letter-spacing:0.08em}
+  .pill{border:1px solid var(--line-2);border-radius:20px;padding:3px 10px;text-transform:uppercase}
+  .case h4{font-size:1.08rem;font-weight:600}
+  .case p{color:var(--dim);font-size:0.87rem;margin:0}
+  .case .result{margin-top:auto;border-top:1px solid var(--line);padding-top:13px;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--steel)}
+
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  @media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:36px}}
+  .about-copy p{color:var(--dim);margin:0 0 18px}
+  .about-copy strong{color:var(--text);font-weight:600}
+  .certs{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+  .cert{display:flex;align-items:center;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+  .cert-badge{width:46px;height:46px;flex-shrink:0;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--amber);letter-spacing:0.04em}
+  .cert h4{font-size:0.98rem;font-weight:600;margin-bottom:4px}
+  .cert p{margin:0;font-size:0.83rem;color:var(--dim)}
+
+  .contact-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:56px}
+  @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:36px}}
+  .facts{margin-top:28px;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+  .fact{display:flex;justify-content:space-between;gap:16px;padding:13px 0;border-bottom:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:0.76rem;color:var(--dim)}
+  .fact b{color:var(--text);font-weight:500;text-align:right}
+  .towns{margin-top:26px;font-size:0.8rem;color:var(--dim);line-height:1.9}
+  .towns b{display:block;font-family:'JetBrains Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text);margin-bottom:8px;font-weight:500}
+
+  form#contact-form{background:var(--panel);border:1px solid var(--line);padding:32px}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--dim);margin-bottom:8px}
+  .field input,.field select,.field textarea{width:100%;background:var(--ink);border:1px solid var(--line-2);color:var(--text);padding:12px 14px;font-family:'Inter',sans-serif;font-size:0.92rem;border-radius:var(--r)}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--amber);outline:none}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.row{grid-template-columns:1fr}}
+  textarea{resize:vertical;min-height:104px}
+  .form-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:4px}
+  .form-note{font-size:0.75rem;color:var(--dim)}
+  .confirm{display:none;margin-top:18px;padding:14px 16px;border-left:2px solid var(--amber);background:rgba(245,165,36,0.07);font-size:0.86rem}
+  .confirm.show{display:block}
+
+  footer{padding:44px 0}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+  .foot nav{display:flex;gap:22px}
+  .foot nav a{font-size:0.84rem;color:var(--dim);text-decoration:none}
+  .foot nav a:hover{color:var(--text)}
+  .foot .meta{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--dim)}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">
+      <svg class="logo-mark" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="26" height="26" stroke="#2C3846"/>
+        <path d="M7 20 L7 12 L14 7 L21 12 L21 20" stroke="#E2E8F0" stroke-width="1.4" fill="none"/>
+        <circle cx="14" cy="15.5" r="2.6" fill="#F5A524"/>
+        <path d="M10.6 12.6 A4.8 4.8 0 0 1 17.4 12.6" stroke="#F5A524" stroke-width="1.1" fill="none" opacity="0.55"/>
+      </svg>
+      <span class="logo-text">CTM<i>.</i>Tech</span>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="#business">Business IT</a>
+      <a href="#home">Smart Home</a>
+      <a href="#work">Case Studies</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-primary">Book a free IT review</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" style="border-bottom:none;padding-bottom:0">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">IT consultancy &mdash; Hertfordshire</div>
+      <h1>Corporate-grade IT, for businesses that <em>aren't corporations.</em></h1>
+      <p class="lede">
+        CTM Tech gives Hertfordshire SMBs the infrastructure standards normally reserved for
+        enterprise IT departments &mdash; networking, cloud, Microsoft 365 and endpoint
+        protection, delivered by an engineer with 18 years inside corporate environments.
+        We apply the same discipline to smart homes.
+      </p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary">Book a free IT review</a>
+        <a href="#business" class="btn btn-ghost">What we do</a>
+      </div>
+      <p class="hero-sub">CISCO CERTIFIED &nbsp;/&nbsp; COMPTIA SECURITY+ &nbsp;/&nbsp; ESTABLISHED [[YEAR]]</p>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 440 400" xmlns="http://www.w3.org/2000/svg">
+        <text x="70" y="34" text-anchor="middle" fill="#8593A5" font-family="JetBrains Mono" font-size="9" letter-spacing="1.5">OFFICE</text>
+        <rect x="24" y="52" width="92" height="120" fill="#11161E" stroke="#2C3846"/>
+        <g fill="#2C3846">
+          <rect x="36" y="66" width="16" height="11"/><rect x="60" y="66" width="16" height="11"/><rect x="84" y="66" width="16" height="11"/>
+          <rect x="36" y="86" width="16" height="11"/><rect x="60" y="86" width="16" height="11"/><rect x="84" y="86" width="16" height="11"/>
+          <rect x="36" y="106" width="16" height="11"/><rect x="84" y="106" width="16" height="11"/>
+        </g>
+        <rect x="60" y="106" width="16" height="11" fill="#F5A524" opacity="0.85"/>
+        <rect x="36" y="130" width="64" height="26" fill="#0A0D12" stroke="#2C3846"/>
+        <circle cx="46" cy="143" r="2.4" fill="#F5A524"/><circle cx="56" cy="143" r="2.4" fill="#2C3846"/><circle cx="66" cy="143" r="2.4" fill="#2C3846"/>
+
+        <text x="370" y="34" text-anchor="middle" fill="#8593A5" font-family="JetBrains Mono" font-size="9" letter-spacing="1.5">HOME</text>
+        <path d="M324 172 L324 96 L370 62 L416 96 L416 172 Z" fill="#11161E" stroke="#2C3846"/>
+        <rect x="340" y="118" width="18" height="18" fill="#2C3846"/>
+        <rect x="382" y="118" width="18" height="18" fill="#F5A524" opacity="0.85"/>
+        <rect x="358" y="146" width="24" height="26" fill="#0A0D12" stroke="#2C3846"/>
+
+        <rect x="170" y="240" width="100" height="52" fill="#0A0D12" stroke="#F5A524" stroke-width="1.4"/>
+        <text x="220" y="262" text-anchor="middle" fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" letter-spacing="1">SECURED</text>
+        <text x="220" y="277" text-anchor="middle" fill="#E2E8F0" font-family="JetBrains Mono" font-size="9" letter-spacing="1">NETWORK</text>
+        <text x="220" y="316" text-anchor="middle" fill="#8593A5" font-family="JetBrains Mono" font-size="8" letter-spacing="1.2">DESIGNED · SEGMENTED · MONITORED</text>
+
+        <g stroke="#2C3846" stroke-width="1.2" fill="none">
+          <path d="M70 172 L70 214 L170 266"/>
+          <path d="M370 172 L370 214 L270 266"/>
+        </g>
+        <circle r="3" fill="#F5A524"><animateMotion dur="3s" repeatCount="indefinite" path="M70 172 L70 214 L170 266"/></circle>
+        <circle r="3" fill="#7DA2CE"><animateMotion dur="3s" begin="1.5s" repeatCount="indefinite" path="M370 172 L370 214 L270 266"/></circle>
+
+        <g transform="translate(222,120)">
+          <path d="M-34 12 a16 16 0 0 1 4 -31 a20 20 0 0 1 38 -5 a15 15 0 0 1 6 36 Z" fill="#11161E" stroke="#2C3846"/>
+          <text x="-2" y="4" text-anchor="middle" fill="#8593A5" font-family="JetBrains Mono" font-size="8" letter-spacing="1">M365</text>
+        </g>
+        <path d="M220 152 L220 240" stroke="#2C3846" stroke-width="1.2" stroke-dasharray="3 4"/>
+        <circle r="2.6" fill="#7DA2CE"><animateMotion dur="2.2s" repeatCount="indefinite" path="M220 152 L220 240"/></circle>
+      </svg>
+    </div>
+  </div>
+
+  <div class="cred">
+    <div class="cred-inner">
+      <div class="cred-item"><b>18 yrs</b><span>Corporate IT experience</span></div>
+      <div class="cred-item"><b>Since [[YEAR]]</b><span>Trading in Hertfordshire</span></div>
+      <div class="cred-item"><b>Cisco</b><span>Certified networking</span></div>
+      <div class="cred-item"><b>Security+</b><span>CompTIA certified</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="business">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Business IT</div>
+      <h2>Four things that keep an SMB running</h2>
+      <p>No bloated retainers, no jargon, no lock-in. Support scaled to what your business
+        actually uses &mdash; from occasional project work to a fully managed estate.</p>
+    </div>
+
+    <div class="biz-grid reveal">
+      <div class="svc">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <rect x="2" y="3" width="20" height="6" rx="1"/><rect x="2" y="15" width="20" height="6" rx="1"/><path d="M6 6h.01M6 18h.01M12 9v6"/>
+        </svg>
+        <h3>Office Networking</h3>
+        <p>The specialism. Networks designed to enterprise standards, not assembled from consumer kit.</p>
+        <ul>
+          <li>Network design &amp; structured cabling</li>
+          <li>Business Wi-Fi &amp; coverage surveys</li>
+          <li>Firewalls, VLANs &amp; segmentation</li>
+          <li>VPN &amp; secure remote access</li>
+          <li>Diagnosing faults others can't</li>
+        </ul>
+      </div>
+
+      <div class="svc">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+        </svg>
+        <h3>Cloud Services</h3>
+        <p>Migration and management that leaves you with lower overheads, not a bigger bill.</p>
+        <ul>
+          <li>Cloud migration &amp; planning</li>
+          <li>Azure &amp; hosted infrastructure</li>
+          <li>Backup &amp; disaster recovery</li>
+          <li>Business continuity planning</li>
+          <li>Server consolidation</li>
+        </ul>
+      </div>
+
+      <div class="svc">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="8"/><rect x="3" y="13" width="8" height="8"/><rect x="13" y="13" width="8" height="8"/>
+        </svg>
+        <h3>Microsoft 365</h3>
+        <p>Set up properly, licensed sensibly, and configured so your team actually uses it.</p>
+        <ul>
+          <li>Tenant setup &amp; migration</li>
+          <li>Exchange &amp; SharePoint</li>
+          <li>Teams deployment</li>
+          <li>Licence review &amp; cost control</li>
+          <li>Conditional access &amp; MFA</li>
+        </ul>
+      </div>
+
+      <div class="svc">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+          <path d="M12 2l8 4v6c0 5-3.4 9.2-8 10-4.6-.8-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/>
+        </svg>
+        <h3>Endpoint Protection</h3>
+        <p>Every laptop is a way in. Security built the way corporate environments do it.</p>
+        <ul>
+          <li>Managed antivirus &amp; EDR</li>
+          <li>Patch management</li>
+          <li>Device encryption &amp; MDM</li>
+          <li>Email &amp; phishing defence</li>
+          <li>Security posture reviews</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="home" class="home-band">
+  <div class="wrap home-grid">
+    <div class="reveal">
+      <div class="eyebrow">Home Technology</div>
+      <h2 class="sec-h2">A house is just a smaller estate</h2>
+      <p class="band-p">
+        Smart homes fail for the same reason office networks fail: someone bolted the clever
+        part onto infrastructure that couldn't carry it. We build the network first &mdash;
+        then everything sitting on top of it stays up.
+      </p>
+      <div class="indep">
+        <strong>Independent by choice.</strong> We aren't a single-brand dealership, so we're
+        not obliged to sell you one manufacturer's ecosystem. We specify what suits the property,
+        the budget and the way you actually live &mdash; and you keep the freedom to change
+        direction later.
+      </div>
+    </div>
+
+    <div class="home-list reveal">
+      <div class="home-item"><h4>Home Networking</h4><p>Full-property Wi-Fi, structured cabling and wired backhaul that holds under load.</p></div>
+      <div class="home-item"><h4>Smart Lighting</h4><p>Scene control and scheduling, integrated properly rather than an app per device.</p></div>
+      <div class="home-item"><h4>Heating &amp; Climate</h4><p>Zoned control that lowers bills instead of adding another remote.</p></div>
+      <div class="home-item"><h4>Security &amp; CCTV</h4><p>Cameras, doorbells and access control, segmented off the main network.</p></div>
+      <div class="home-item"><h4>Multi-Room Audio</h4><p>Whole-home sound through one interface, not five competing ones.</p></div>
+      <div class="home-item"><h4>Aftercare</h4><p>Updates, monitoring and support. Documented, so it stays serviceable.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Case Studies</div>
+      <h2>Selected projects</h2>
+      <p>Problem, approach, outcome. Swap each card below for real client work &mdash;
+        and keep a measurable result on every one.</p>
+    </div>
+    <div class="work-grid reveal">
+      <div class="case">
+        <div class="case-top"><span>01 / [[SECTOR]]</span><span class="pill">Business</span></div>
+        <h4>[[Project title]]</h4>
+        <p>[[The problem in one sentence — what was failing, and what it cost them.]]</p>
+        <p>[[What you did — two or three specifics, named technologies where relevant.]]</p>
+        <div class="result">RESULT: [[measurable outcome]]</div>
+      </div>
+      <div class="case">
+        <div class="case-top"><span>02 / [[SECTOR]]</span><span class="pill">Business</span></div>
+        <h4>[[Project title]]</h4>
+        <p>[[The problem in one sentence — what was failing, and what it cost them.]]</p>
+        <p>[[What you did — two or three specifics, named technologies where relevant.]]</p>
+        <div class="result">RESULT: [[measurable outcome]]</div>
+      </div>
+      <div class="case">
+        <div class="case-top"><span>03 / RESIDENTIAL</span><span class="pill">Home</span></div>
+        <h4>[[Project title]]</h4>
+        <p>[[The property and the brief in one sentence.]]</p>
+        <p>[[What was installed — network first, then the automation layer.]]</p>
+        <div class="result">RESULT: [[measurable outcome]]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div class="about-copy reveal">
+      <div class="eyebrow">About CTM Tech</div>
+      <h2 class="sec-h2" style="margin-bottom:22px">Eighteen years of enterprise habits</h2>
+      <p>
+        CTM Tech has served Hertfordshire since <strong>[[YEAR]]</strong>. Behind it sits
+        <strong>18 years inside corporate IT environments</strong> &mdash; the kind where
+        downtime is counted in pounds per minute and a badly segmented network becomes a
+        board-level problem.
+      </p>
+      <p>
+        That background shapes everything here. Most small businesses inherit their IT by
+        accident: a router from the broadband provider, a firewall nobody has logged into
+        since install, laptops running whatever came in the box. It works right up until it
+        very much doesn't. <strong>We bring corporate standards down to SMB scale and SMB
+        budgets</strong> &mdash; and we document what we build, so you're never held hostage
+        by the only person who understands it.
+      </p>
+      <p>
+        The same principles carry into the home. A smart home is an estate with fewer users
+        and higher expectations, and it deserves a properly designed network underneath it
+        just as much as an office does.
+      </p>
+    </div>
+
+    <div class="reveal">
+      <div class="certs">
+        <div class="cert">
+          <div class="cert-badge">CISCO</div>
+          <div><h4>Cisco Certified</h4><p>Networking to vendor standard &mdash; routing, switching and segmentation done to spec, not to guesswork.</p></div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge">SEC+</div>
+          <div><h4>CompTIA Security+</h4><p>Vendor-neutral security fundamentals: threats, endpoint hardening and risk management.</p></div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge">18 YR</div>
+          <div><h4>Corporate track record</h4><p>Nearly two decades supporting infrastructure in environments where it isn't allowed to fail.</p></div>
+        </div>
+        <div class="cert">
+          <div class="cert-badge">LOCAL</div>
+          <div><h4>Hertfordshire based</h4><p>On site quickly, and reachable by someone who knows your setup rather than a ticket queue.</p></div>
+        </div>
+        <!-- Uncomment ONLY once actually certified:
+        <div class="cert">
+          <div class="cert-badge">CE</div>
+          <div><h4>Cyber Essentials</h4><p>Government-backed certification, and support guiding clients through their own assessment.</p></div>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="border-bottom:none">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <div class="eyebrow">Get in touch</div>
+      <h2 class="sec-h2">Book a free IT review</h2>
+      <p class="band-p">
+        No obligation, no sales script. We look over what you're running now, show you where
+        the gaps are, and tell you what we'd do about them. If the answer is nothing, we'll say so.
+      </p>
+      <div class="facts">
+        <div class="fact"><span>RESPONSE</span><b>Within 1 business day</b></div>
+        <div class="fact"><span>IT REVIEW</span><b>Free, no obligation</b></div>
+        <div class="fact"><span>CONTRACTS</span><b>Flexible &mdash; no lock-in</b></div>
+        <div class="fact"><span>COVERAGE</span><b>Hertfordshire &amp; borders</b></div>
+      </div>
+      <div class="towns">
+        <b>Areas served</b>
+        St Albans &middot; Watford &middot; Hemel Hempstead &middot; Stevenage &middot; Hertford &middot;
+        Hatfield &middot; Welwyn Garden City &middot; Harpenden &middot; Berkhamsted &middot;
+        Bishop's Stortford &middot; Potters Bar &middot; Borehamwood &middot; and surrounding areas
+      </div>
+    </div>
+
+    <form id="contact-form" class="reveal" novalidate>
+      <div class="row">
+        <div class="field"><label for="f-name">Name</label><input type="text" id="f-name" name="name" required></div>
+        <div class="field"><label for="f-company">Company (optional)</label><input type="text" id="f-company" name="company"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="f-email">Email</label><input type="email" id="f-email" name="email" required></div>
+        <div class="field"><label for="f-phone">Phone (optional)</label><input type="tel" id="f-phone" name="phone"></div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="f-type">Enquiry type</label>
+          <select id="f-type" name="type">
+            <option>Business IT support</option>
+            <option>Office networking</option>
+            <option>Cloud / Microsoft 365</option>
+            <option>Endpoint protection &amp; security</option>
+            <option>Home networking</option>
+            <option>Home automation</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-size">Users / property</label>
+          <select id="f-size" name="size">
+            <option>1&ndash;10 users</option>
+            <option>11&ndash;25 users</option>
+            <option>26&ndash;50 users</option>
+            <option>50+ users</option>
+            <option>Residential</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-message">What's the situation?</label>
+        <textarea id="f-message" name="message" required placeholder="What's working, what isn't, and what you'd like to change."></textarea>
+      </div>
+      <div class="form-foot">
+        <span class="form-note">We'll only use these details to reply to your enquiry.</span>
+        <button type="submit" class="btn btn-primary">Send enquiry</button>
+      </div>
+      <div class="confirm" id="confirmMsg">
+        Enquiry ready to send. This form isn't connected to an inbox yet &mdash; see the setup
+        note in the page source to wire it up.
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span class="logo-text">CTM<i>.</i>Tech</span>
+    <nav>
+      <a href="#business">Business IT</a>
+      <a href="#home">Smart Home</a>
+      <a href="#work">Case Studies</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="meta">&copy; 2026 CTM Tech &middot; Hertfordshire &middot; Est. [[YEAR]]</span>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+  }));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  const form = document.getElementById('contact-form');
+  const confirmMsg = document.getElementById('confirmMsg');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    // TODO: FORM SUBMIT — replace with a real endpoint, e.g.
+    // fetch('https://formspree.io/f/YOUR_ID', {method:'POST', body:new FormData(form), headers:{Accept:'application/json'}})
+    confirmMsg.classList.add('show');
+    form.reset();
+  });
+</script>
+</body>
+</html>
