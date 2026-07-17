@@ -7,7 +7,7 @@
  * Environment variables (Pages → Settings → Environment variables):
  *   RESEND_API_KEY    (secret, required)  API key from resend.com
  *   CONTACT_TO        (required)          Inbox that receives enquiries
- *   CONTACT_FROM      (required)          e.g. "CTM Tech Website <enquiries@ctmtech.co.uk>"
+ *   CONTACT_FROM      (required)          e.g. "CTM Tech Website <enquiries@ctm-tech.co.uk>"
  *                                         Domain MUST be verified in Resend.
  *   TURNSTILE_SECRET  (secret, optional)  If set, Turnstile is enforced.
  *
@@ -135,7 +135,7 @@ export async function onRequestPost(context) {
 
   const html = `
     <div style="font:14px/1.6 system-ui,sans-serif;color:#111">
-      <h2 style="margin:0 0 12px;font-size:17px">New enquiry via ctmtech.co.uk</h2>
+      <h2 style="margin:0 0 12px;font-size:17px">New enquiry via ctm-tech.co.uk</h2>
       ${table(rows)}
       <h3 style="margin:20px 0 8px;font-size:14px">Message</h3>
       <div style="white-space:pre-wrap;padding:12px;background:#f9fafb;border:1px solid #e5e7eb">${esc(data.message)}</div>
@@ -144,7 +144,7 @@ export async function onRequestPost(context) {
     </div>`;
 
   const text = [
-    'New enquiry via ctmtech.co.uk',
+    'New enquiry via ctm-tech.co.uk',
     '',
     ...rows.map(([k, v]) => `${k}: ${v}`),
     '',
