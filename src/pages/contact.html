@@ -1,0 +1,104 @@
+<!--meta
+path: /contact/
+nav: contact
+priority: 0.8
+crumbs: Contact|/contact/
+cta: none
+title: Contact CTM Tech | IT Support, AI &amp; Home Assistant in Hertfordshire
+description: Get in touch with CTM Tech for a no-obligation review of your business IT, AI plans or smart home. Reply within one business day. Covering Hertfordshire and borders.
+-->
+<section class="page-hero" style="padding-bottom:48px">
+  <div class="wrap">
+    {{CRUMBS}}
+    <div class="eyebrow">Get in touch</div>
+    <h1>Book a <em>no-obligation review.</em></h1>
+    <p class="lede">No sales script. Tell us what you're running and what's getting in the way.
+      We'll look over it, show you where the gaps are and tell you what we'd do about them. If
+      the answer is "nothing", we'll say so.</p>
+  </div>
+</section>
+
+<section id="contact" style="border-bottom:none">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <h2 class="sec-h2" style="font-size:1.5rem">What happens next</h2>
+      <div class="steps" style="grid-template-columns:1fr;margin-top:22px">
+        <div class="step"><div class="step-n">01 &middot; WE REPLY</div><p style="margin-top:8px">Within one business day, by email or phone, whichever you prefer.</p></div>
+        <div class="step"><div class="step-n">02 &middot; QUICK CALL</div><p style="margin-top:8px">A short conversation to understand the situation. No obligation.</p></div>
+        <div class="step"><div class="step-n">03 &middot; REVIEW &amp; PROPOSAL</div><p style="margin-top:8px">We review what you have and send a written plan with clear costs.</p></div>
+      </div>
+      <div class="facts">
+        <div class="fact"><span>RESPONSE</span><b>Within 1 business day</b></div>
+        <div class="fact"><span>CONTRACTS</span><b>Flexible &mdash; no lock-in</b></div>
+        <div class="fact"><span>COVERAGE</span><b>Hertfordshire &amp; borders</b></div>
+        <!-- Add a direct line: many buyers prefer calling to filling in a form.
+        <div class="fact"><span>PHONE</span><b><a href="tel:+44XXXXXXXXXX">01xxx xxxxxx</a></b></div>
+        <div class="fact"><span>EMAIL</span><b><a href="mailto:hello@ctm-tech.co.uk">hello@ctm-tech.co.uk</a></b></div>
+        -->
+      </div>
+      <div class="towns">
+        <b>Areas served</b>
+        St Albans &middot; Watford &middot; Hemel Hempstead &middot; Stevenage &middot; Hertford &middot;
+        Hatfield &middot; Welwyn Garden City &middot; Harpenden &middot; Berkhamsted &middot;
+        Bishop's Stortford &middot; Potters Bar &middot; Tring &middot; and surrounding areas
+      </div>
+    </div>
+
+    <form id="contact-form" class="reveal" method="POST" action="/api/contact" novalidate>
+      <div class="row">
+        <div class="field"><label for="f-name">Name</label><input type="text" id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-company">Company (optional)</label><input type="text" id="f-company" name="company" autocomplete="organization"></div>
+      </div>
+      <div class="row">
+        <div class="field"><label for="f-email">Email</label><input type="email" id="f-email" name="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-phone">Phone (optional)</label><input type="tel" id="f-phone" name="phone" autocomplete="tel"></div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="f-type">Enquiry type</label>
+          <select id="f-type" name="type">
+            <option>Business IT support</option>
+            <option>Office networking</option>
+            <option>Cloud / Microsoft 365</option>
+            <option>Endpoint protection &amp; security</option>
+            <option>AI &amp; automation</option>
+            <option>Home networking</option>
+            <option>Home automation</option>
+            <option>Home Assistant</option>
+            <option>Control4 integration</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-size">Users / property</label>
+          <select id="f-size" name="size">
+            <option>1&ndash;10 users</option>
+            <option>11&ndash;25 users</option>
+            <option>26&ndash;50 users</option>
+            <option>50+ users</option>
+            <option>Residential</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-message">What's the situation?</label>
+        <textarea id="f-message" name="message" required placeholder="What's working, what isn't, and what you'd like to change."></textarea>
+      </div>
+
+      <!-- Honeypot. Bots fill this in; people never see it. Not display:none — some bots skip those. -->
+      <div class="visually-hidden" aria-hidden="true">
+        <label for="f-website">Website</label>
+        <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
+      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAD38WReZ-63iNJUv" data-theme="dark"></div>
+
+      <div class="form-foot">
+        <span class="form-note">We'll only use these details to reply to your enquiry. <a href="/privacy/">Privacy notice</a>.</span>
+        <button type="submit" class="btn btn-primary">Send enquiry</button>
+      </div>
+      <div class="confirm" id="confirmMsg" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>

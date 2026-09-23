@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ctm-tech.co.uk/sitemap.xml
